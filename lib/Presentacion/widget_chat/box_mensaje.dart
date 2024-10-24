@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 
 class BoxMensaje extends StatelessWidget {
-  BoxMensaje({super.key});
+  BoxMensaje({super.key, required this.onValue});
+
+  final ValueChanged<String> onValue;
 
   final textController = TextEditingController();
 
@@ -20,7 +22,7 @@ class BoxMensaje extends StatelessWidget {
         suffixIcon: IconButton(onPressed: () {
           final textValue = textController.value.text;
           textController.clear();
-          print("El valor es $textValue");
+          onValue(textValue);
         }, icon: const Icon(Icons.send_outlined)),
       );
 
@@ -34,7 +36,7 @@ class BoxMensaje extends StatelessWidget {
       controller: textController,
       decoration: inputDecoration,
       onFieldSubmitted: (value) {
-        print("el valor de la caja de texto es: $value");
+        onValue(value);
         textController.clear();
         focusNode.requestFocus();
 
