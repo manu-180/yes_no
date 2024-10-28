@@ -50,7 +50,7 @@ class Chat extends StatelessWidget {
 
                 return (chatProvider.mensajesList[index].quienEs == QuienEs.yo)
                 ? MisMensajes(message:message)
-                : CamiMensajes(message:message);
+                : CamiMensajes(message:message, imageUrl: message.url ?? "",);
                 }
               )
             ),

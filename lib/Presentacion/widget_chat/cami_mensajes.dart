@@ -5,8 +5,9 @@ import 'package:flutter/material.dart';
 class CamiMensajes extends StatelessWidget {
 
   final Mensaje message;
+  final String imageUrl;
 
-  const CamiMensajes({super.key, required this.message});
+  const CamiMensajes({super.key, required this.message, required this.imageUrl});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,7 @@ class CamiMensajes extends StatelessWidget {
           )
         ),
         const SizedBox(height: 5),
-        const _ImageBubble(),
+        _ImageBubble(imageUrl),
         const SizedBox(height: 5)
       ],
     );
@@ -35,16 +36,18 @@ class CamiMensajes extends StatelessWidget {
 }
 
 class _ImageBubble extends StatelessWidget {
-  const _ImageBubble();
+  final String url;
+  const _ImageBubble(this.url);
 
   @override
   Widget build(BuildContext context) {
+    
 
     final size = MediaQuery.of(context).size;
 
     return ClipRRect(
       borderRadius: BorderRadius.circular(20),
-      child: Image.network("https://yesno.wtf/assets/yes/2-5df1b403f2654fa77559af1bf2332d7a.gif",
+      child: Image.network(url,
       width: size.width * 0.7,
       height: size.height * 0.2,
       fit: BoxFit.cover,
