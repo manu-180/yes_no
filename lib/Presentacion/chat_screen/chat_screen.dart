@@ -1,6 +1,7 @@
 import 'package:app_yes_no/Presentacion/provider/chat_provider.dart';
 import 'package:app_yes_no/Presentacion/widget_chat/box_mensaje.dart';
 import 'package:app_yes_no/Presentacion/widget_chat/cami_mensajes.dart';
+import 'package:app_yes_no/Presentacion/widget_chat/change_theme_button.dart';
 import 'package:app_yes_no/Presentacion/widget_chat/mis_mensajes.dart';
 import 'package:app_yes_no/domain/entities/mensaje.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +15,9 @@ class ChatScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Cami mi amor🖤"),
+        actions: const [
+          ChangeThemeButton(), // Aquí añades el botón
+        ],
         leading: const Padding(
           padding: EdgeInsets.all(3.0),
           child: CircleAvatar(

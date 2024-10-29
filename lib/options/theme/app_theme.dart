@@ -13,7 +13,7 @@ const List<Color> colorThemes = [
 ];
 
 class AppTheme extends StatelessWidget{
-  const AppTheme({super.key, required this.seleccionarColor}): assert(seleccionarColor >=0 && seleccionarColor < 7, "el index solo puede ser entre 0 y ${colorThemes.length}");
+  const AppTheme({super.key, required this.seleccionarColor}): assert(seleccionarColor >=0 && seleccionarColor < 7, "el index solo puede ser entre 0 y ${colorThemes.length - 1}");
 
   final int seleccionarColor;
 
